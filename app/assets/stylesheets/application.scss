@@ -12,9 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require octicons
  */
  @import "bootstrap";
  @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+.octicon-bookmark {
+    font-size: 25px !important;
+}
 
 html,
 body {
@@ -188,4 +193,72 @@ a:focus {
     text-shadow: none;
     color: #fff;
     background: #222;
+}
+
+.inner-body {
+    position: relative;
+    min-height: auto;
+    text-align: center;
+    color: #001A33;
+    width: 100%;
+    background-color: #fff;
+}
+
+.inner-body .body-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+    z-index: 2;
+}
+
+.inner-body .body-content .inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.inner-body .body-content .inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #222;
+}
+
+@media(min-width:34em) {
+    
+    .inner-body {
+        min-height: 100%;
+    }
+
+    .inner-body .body-content {
+        position: absolute;
+        top: 50%;
+        padding: 0 50px;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    .inner-body .body-content .inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    .inner-body .body-content .inner h1 {
+        font-size: 53px;
+    }
+
+    div > .user-form{
+        min-height: auto                    !important;
+    }
+
+    .user-form{
+        position: relative                  !important;
+        top: 100px                          !important;
+        -webkit-transform: translateY(0%)   !important;
+        -ms-transform: translateY(0%)       !important;
+        transform: translateY(0%)           !important;
+    }
+
 }
