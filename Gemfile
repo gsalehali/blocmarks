@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -18,8 +19,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap'
+gem 'octicons-rails'
 gem 'figaro'
 gem 'pry'
+gem 'devise'
 
 group :development, :test do
   gem 'spring' # Pre Loads web server in Dev for faster response times
