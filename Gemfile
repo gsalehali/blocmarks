@@ -22,10 +22,10 @@ gem 'figaro'
 gem 'pry'
 
 group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-  gem 'rspec-rails'
+  gem 'spring' # Pre Loads web server in Dev for faster response times
+  gem 'pry-rails' # Pry REPL for rails. 
+  gem 'pry-byebug' # Byebug debbuging methods in PRY
+  gem 'rspec-rails' # RSpec for Rails
   gem 'capybara'
   gem 'shoulda'
   gem 'faker'
