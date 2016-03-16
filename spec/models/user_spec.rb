@@ -22,7 +22,9 @@ describe User, type: :model do
     :confirmation_sent_at=>:datetime,
     :unconfirmed_email=>:string,
     :created_at=>:datetime,
-    :updated_at=>:datetime
+    :updated_at=>:datetime,
+    :last_name=>:string,
+    :first_name=>:string
   } {}
 
   ## Validations
@@ -30,4 +32,15 @@ describe User, type: :model do
   ## Class Methods
 
   ## Instance Methods
+  describe "Instance Methods" do
+    before do
+      @user = create(:user)
+    end
+
+    describe "#full_name"do
+      it "returns users's full name" do
+        expect( @user.full_name ).to eq( "#{@user.first_name} #{@user.last_name}" )
+      end
+    end
+  end
 end
