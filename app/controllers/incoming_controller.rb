@@ -15,13 +15,15 @@ class IncomingController < ApplicationController
     @url = params["body-plain"]
 
     if @user.nil?
+      generated_password = Devise.friendly_token.first(8)
       @user = User.new(
         email: params[:sender],
-        password: params[:sender],
-        password_confirmation: params[:sender]
+        password: generated_password,
+        password_confirmation: generated_password
       )
-      @user.skip_confirmation!
+      @user.skip_confirmation_notification!
       @user.save
+      RegistrationMailer.welcome(@user, @user.confirmation_token , generated_password).deliver_now
     end
 
     if @topic.nil?
