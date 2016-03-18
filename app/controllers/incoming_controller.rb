@@ -15,7 +15,7 @@ class IncomingController < ApplicationController
     @url = params["body-plain"]
 
     if @user.nil?
-      @user = user.new(
+      @user = User.new(
         email: params[:sender],
         password: params[:sender],
         password_confirmation: params[:sender]
@@ -25,7 +25,7 @@ class IncomingController < ApplicationController
     end
 
     if @topic.nil?
-      @topic = @user.topic = Topic.new(
+      @topic = @user.topics.new(
         title: params[:subject]
       )
       @topic.save
