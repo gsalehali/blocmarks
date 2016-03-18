@@ -1,50 +1,46 @@
-<div class="body-content user-form">
-  <div class="inner">
-    <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 text-xs-center">
-        <div class="row text-xs-left">
-          <h2>Sign up</h2>
-        </div>
-        <%= form_for(resource, as: resource_name, :html => {class: "row"}, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-          <div class="form-group row">
-              <%= f.label :username, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
-              <div class="col-sm-10 col-md-8">
-                <%= f.text_field :username, autofocus: true, class: ' col-sm-8 form-control', placeholder: "Enter name" %> 
-              </div>          
-          </div>
-
-          <div class="form-group row">
-            <%= f.label :email, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
-            <div class="col-sm-10 col-md-8">
-              <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <%= f.label :password, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
-            <div class="col-sm-10 col-md-8">
-              <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-            </div>
-          </div>
-          <div class="form-group row">
-            <%= f.label :password_confirmation, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
-            <div class="col-sm-10 col-md-8">
-              <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-4 col-sm-push-8 text-xs-right">
-              <%= f.submit "Sign up", class: 'btn btn-primary-outline btn-block' %>
-            </div>
-            <div class="col-sm-8 col-sm-pull-4 text-xs-left">
-              <small>
-                <%= render "devise/shared/links" %>
-              </small>
-            </div>
-          </div>
-        <% end %>
-      </div>
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1 text-xs-center">
+    <div class="row text-xs-left">
+      <h2>Sign up</h2>
     </div>
+    <%= form_for(resource, as: resource_name, :html => {class: "row"}, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+      <div class="form-group row">
+          <%= f.label :username, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+          <div class="col-sm-10 col-md-8">
+            <%= f.text_field :username, autofocus: true, class: ' col-sm-8 form-control', placeholder: "Enter name" %> 
+          </div>          
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :email, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+        <div class="col-sm-10 col-md-8">
+          <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= f.label :password, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+        <div class="col-sm-10 col-md-8">
+          <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label :password_confirmation, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+        <div class="col-sm-10 col-md-8">
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-4 col-sm-push-8 text-xs-right">
+          <%= f.submit "Sign up", class: 'btn btn-primary-outline btn-block' %>
+        </div>
+        <div class="col-sm-8 col-sm-pull-4 text-xs-left">
+          <small>
+            <%= render "devise/shared/links" %>
+          </small>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

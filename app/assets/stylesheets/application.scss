@@ -273,11 +273,15 @@ a:focus {
         font-size: 53px;
     }
 
-    div > .user-form{
+/*    div > .body-content{
         min-height: auto                    !important;
+    }*/
+    
+    .alert{
+        margin-bottom: 1.3em;
     }
 
-    .user-form{
+    .body-content, .alert{
         position: relative                  !important;
         top: 100px                          !important;
         -webkit-transform: translateY(0%)   !important;
