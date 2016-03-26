@@ -23,6 +23,7 @@ gem 'font-awesome-sass'
 gem 'figaro'
 gem 'pry'
 gem 'devise'
+gem 'link_thumbnailer'
 
 group :development, :test do
   gem 'spring' # Pre Loads web server in Dev for faster response times
