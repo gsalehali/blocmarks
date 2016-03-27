@@ -33,7 +33,7 @@ end
 topics = Topic.all
 100.times do 
   Bookmark.create!(
-    url: Faker::Internet.url,
+    url: "http://www.facebook.com/",
     topic: topics.sample
   )
 end

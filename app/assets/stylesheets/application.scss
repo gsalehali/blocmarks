@@ -277,26 +277,17 @@ a:focus {
         min-height: auto                    !important;
     }*/
     
-    .body-content .alert{
-        position: relative                  !important;
-        top: 50%                            !important;
-        -webkit-transform: translateY(-50%)   !important;
-        -ms-transform: translateY(-50%)       !important;
-        transform: translateY(-50%)           !important;
-    }
-
-
-    .in-form .alert{
-        margin-top: -50px;
-        margin-bottom: 1.3em;
-    }
 
     .in-form {
         position: relative                  !important;
-        top: 150px                          !important;
+        top: 100px                          !important;
         -webkit-transform: translateY(0%)   !important;
         -ms-transform: translateY(0%)       !important;
         transform: translateY(0%)           !important;
     }
 
+}
+
+.fn-btn {
+    margin-top: 10px;
 }

@@ -1,2 +1,8 @@
-<h1>Topics#new</h1>
-<p>Find me in app/views/topics/new.html.erb</p>
+<div class="row">
+  <div class="col-lg-10 col-lg-offset-1 text-xs-center">
+    <div class="row text-xs-left">
+      <h2>Sign up</h2>
+    </div>
+    <%= render partial: 'form', locals: {topic: @topic} %>
+  </div>
+</div>

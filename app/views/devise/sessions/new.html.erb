@@ -3,7 +3,7 @@
     <div class="row text-xs-left">
       <h2>Sign in</h2>
     </div>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, :html => {class: "row"}, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="form-group row">
