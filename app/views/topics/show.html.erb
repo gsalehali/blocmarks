@@ -1,19 +1,4 @@
 <h1><%= "##{@topic.title}" %></h1>
 <div class="row">
-  <% @bookmarks.each do |bookmark| %>
-    <div class="col-lg-3 col-md-4 col-sm-12 text-xs-left">
-      <div class="card">
-        <div class="card-block">
-          <h4 class="card-title text-overflow">Card title</h4>
-          <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-        </div>
-        <%= image_tag bookmark.thumbnail, size: "150x150",class:"card-img-top img-fluid center-block" %>
-        <div class="card-block">
-          <h5 class="card-title"><%= bookmark.title %></h4>
-          <%= link_to "Link", bookmark.url, class: "btn btn-primary-outline btn-sm" %>
-          <div><small class="text-muted"><%= "Added #{time_ago_in_words(bookmark.created_at)} ago" %></small></div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: "topics/bookmark", collection: @bookmarks %>
 </div>

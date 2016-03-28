@@ -1,20 +1,23 @@
 require "link_thumbnailer"
 
 class Bookmark < ActiveRecord::Base
-  belongs_to :topic
+  after_save :add_thumbnail_and_title
 
-  def thumbnail
-    obj = LinkThumbnailer.generate(url)
-    obj.images.first.src.to_s
+  belongs_to :topic 
+
+  private
+
+  def add_thumbnail_and_title
+    begin
+      puts "Strated generating thumbanil and title"
+      obj = LinkThumbnailer.generate(url)
+      thumbnail = obj.images.first.src.to_s
+      title = obj.title 
+      self.update_columns(thumbnail: thumbnail, title: title)
+      puts "Finished generating thumbanil and title"
+    rescue 
+      false
+    end
   end
 
-  def title
-    obj = LinkThumbnailer.generate(url)
-    obj.title
-  end
-
-  def description(url)
-    obj = LinkThumbnailer.generate(url)
-    obj.description
-  end
 end
