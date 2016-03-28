@@ -1,10 +1,11 @@
+<hr>
 <%= content_tag :div, class: 'row', id: "topic-#{topic.id}" do %>
   <div class="media text-xs-left">
     <div class="media-body">
       <div class="row">
         <h5 class="media-heading pull-left"><%= link_to "##{topic.title}", topic %><h5>
         <div class="pull-right">
-          <%= link_to topic, html_options = { method: :delete, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Topic", class: "btn-sm btn-danger-outline"}  do %>
+          <%= link_to topic, html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Topic", class: "btn-sm btn-danger-outline"}  do %>
             <span class="fa fa-times"></span>
           <% end %>
         </div>
@@ -20,4 +21,3 @@
     </div>
   </div> 
 <% end %>
-<hr>

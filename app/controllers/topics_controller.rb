@@ -43,10 +43,15 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     if @topic.destroy
       flash[:notice] = "Topics has been deleted"
-      redirect_to topics_path
+      # redirect_to topics_path
     else 
       flash[:error] = "Error deleting topic"
-      render :show
+      # render :show
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 
