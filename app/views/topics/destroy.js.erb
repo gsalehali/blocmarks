@@ -1,5 +1,5 @@
 <% if @topic.destroyed? %>
-  flashMsg( '#topic-' +<%= @topic.id %> ,"<%= flash[:notice] %>", "success")
+  flashMsg( '#topic-' +<%= @topic.id %>, '#topic-' +<%= @topic.id %> ,"<%= flash[:notice] %>", "success")
   $('#topic-' +<%= @topic.id %>).next('hr').fadeOut(1000);
   $('#topic-' +<%= @topic.id %>).fadeOut(1000);
   <% flash.discard %>

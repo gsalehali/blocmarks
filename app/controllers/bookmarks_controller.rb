@@ -46,11 +46,16 @@ class BookmarksController < ApplicationController
     @topic = @bookmark.topic
 
     if @bookmark.destroy
-      flash[:notice] = "Topics has been deleted"
-      redirect_to @topic
+      flash[:notice] = "Bookmark has been deleted"
+      # redirect_to @topic
     else 
       flash[:error] = "Error deleting topic"
-      render :show
+      # render :show
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 

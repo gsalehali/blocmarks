@@ -1,8 +1,8 @@
-<div class="col-lg-3 col-md-4 col-sm-12 text-xs-left">
+<%= content_tag :div, class:"col-lg-3 col-md-4 col-sm-12 text-xs-left", id:"bookmark-#{bookmark.id}" do %>
   <div class="card">
     <div class="row card-block pull-right">
       <div>
-        <%= link_to [topic, bookmark], html_options = { method: :delete, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Bookamrk", class: "btn-sm btn-danger-outline"}  do %>
+        <%= link_to [topic, bookmark], html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Bookamrk", class: "btn-sm btn-danger-outline"}  do %>
           <span class="fa fa-times"></span>
         <% end %>
       </div>
@@ -22,4 +22,4 @@
       <div><small class="text-muted"><%= "Added #{time_ago_in_words(bookmark.created_at)} ago" %></small></div>
     </div>
   </div>
-</div>
+<% end %>

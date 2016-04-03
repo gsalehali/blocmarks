@@ -7,5 +7,7 @@
       <% end %>
     </div>
   </div>
-  <%= render partial: "bookmarks/bookmark", collection: @bookmarks, locals:{topic: @topic} %>
+  <div class="row bookmark-border">
+    <%= render partial: "bookmarks/bookmark", collection: @bookmarks, locals:{topic: @topic} %>
+  </div>
 </div>
