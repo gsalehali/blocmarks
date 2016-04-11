@@ -1,0 +1,12 @@
+<div class="row card-block pull-right">
+  <div>
+    <%= link_to [bookmark.topic, bookmark], html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Bookamrk", class: "btn-sm btn-danger-outline"}  do %>
+      <span class="fa fa-times"></span>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to edit_topic_bookmark_path(bookmark.topic, bookmark), html_options = {"data-toggle":"tooltip", "data-placement": "top", title: "Edit Bookmark", class: "btn-sm  btn-primary-outline"}  do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+  </div>
+</div>

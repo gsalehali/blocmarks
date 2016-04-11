@@ -1,0 +1,27 @@
+<%= content_tag :div, class: 'row', id: "topic-#{topic.id}" do %>
+  <div class="media text-xs-left">
+    <div class="media-body">
+      <div class="row">
+        <% if policy(topic).destroy? %>
+          <div class="pull-right">
+            <%= link_to topic, html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Topic", class: "btn-sm btn-danger-outline t-btn"}  do %>
+              <span class="fa fa-times"></span>
+            <% end %>
+          </div>
+        <% end %>
+        <% if policy(topic).update? %>
+          <div class="pull-right">
+            <%= link_to edit_topic_path(topic), html_options = {"data-toggle":"tooltip", "data-placement": "top", title: "Edit Topic", class: "btn-sm  btn-primary-outline"}  do %>
+              <span class="fa fa-pencil"></span>
+            <% end %>
+          </div>
+        <% end %>
+        <h5 class="media-heading" style="margin-left: 15px;"><%= link_to "#{topic.title}", topic %><h5>
+      </div>
+      <div class="row bookmark-border">
+        <%= render partial: "bookmarks/bookmark", collection: topic.bookmarks.limit(4).order("RANDOM()"), locals:{topic: topic} %>
+      </div>
+    </div>
+  </div> 
+<% end %>
+<hr>

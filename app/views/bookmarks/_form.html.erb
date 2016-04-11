@@ -1,0 +1,35 @@
+<%= form_for [topic, bookmark], html: {class: "row"} do |f| %>
+  <% if topic.errors.any? %>
+  <div class="alert alert-danger text-xs-left">
+    <h4><%= pluralize(@bookmark.errors.count, "error") %>.</h4>
+    <ul>
+      <% @bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= form_group_tag(@bookmark.errors[:url]) do  %>
+      <%= f.label :url, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+      <div class="col-sm-10 col-md-8">
+        <%= f.text_field :url, autofocus: true, class: " col-sm-8 form-control #{add_error_tag if topic.errors.any?}", placeholder: "http://www.example.com" %>
+      </div> 
+  <% end %>   
+  <%= form_group_tag(@bookmark.errors[:title]) do  %>
+      <%= f.label :title, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+      <div class="col-sm-10 col-md-8">
+        <%= f.text_field :title, autofocus: true, class: " col-sm-8 form-control #{add_error_tag if topic.errors.any?}", placeholder: "Enter Title(optional)" %> 
+      </div> 
+  <% end %> 
+  <%= form_group_tag(@bookmark.errors[:description]) do  %>
+      <%= f.label :description, class: 'col-sm-2 col-md-4 form-control-label text-xs-left' %>
+      <div class="col-sm-10 col-md-8">
+        <%= f.text_area :description, autofocus: true, class: " col-sm-8 form-control #{add_error_tag if topic.errors.any?}", placeholder: "Enter Description(optional)" %> 
+      </div> 
+  <% end %>           
+  <div class="form-group row has-error">
+    <div class="col-sm-4 col-sm-push-8 text-xs-right">
+      <%= f.submit "Submit", class: 'btn btn-primary-outline btn-block' %>
+    </div>
+  </div>
+<% end %>

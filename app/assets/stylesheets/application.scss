@@ -273,11 +273,12 @@ a:focus {
         font-size: 53px;
     }
 
-    div > .user-form{
+/*    div > .body-content{
         min-height: auto                    !important;
-    }
+    }*/
+    
 
-    .user-form{
+    .in-form {
         position: relative                  !important;
         top: 100px                          !important;
         -webkit-transform: translateY(0%)   !important;
@@ -285,4 +286,33 @@ a:focus {
         transform: translateY(0%)           !important;
     }
 
+}
+
+.fn-btn {
+    margin-top: 10px;
+}
+
+.bookmark-border{
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    border: solid #f7f7f9;
+    padding: 1.5rem;
+    border-width: .2rem
+}
+/*
+.fa-times {
+    margin-right: 20px;
+}*/
+
+.t-btn{
+    margin-right: 15px;
+}
+
+.d-btn{
+    margin-left: 5px;
+}
+
+.e-btn{
+    margin-right: 5px;
 }
