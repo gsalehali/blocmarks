@@ -1,0 +1,21 @@
+<div class="row">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#user-bookmarks" role="tab">My Bookmarks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#liked-bookmarks" role="tab">Liked Bookmarks</a>
+    </li>
+  </ul>
+<br>
+  <div class="tab-content">
+    <div class="tab-pane active" id="user-bookmarks" role="tabpanel">
+      <%= render @user_bookmarks %>
+    </div>
+    <div class="tab-pane" id="liked-bookmarks" role="tabpanel">
+      <% @liked_bookmarks.each do |like| %>
+        <%= render partial: "bookmarks/bookmark", locals: {bookmark: like.bookmark} %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,22 +1,11 @@
 <%= content_tag :div, class:"col-lg-3 col-md-4 col-sm-12 text-xs-left", id:"bookmark-#{bookmark.id}" do %>
   <div class="card">
     <% if policy(bookmark).edit? %>
-      <div class="row card-block pull-right">
-        <div>
-          <%= link_to [topic, bookmark], html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Bookamrk", class: "btn-sm btn-danger-outline"}  do %>
-            <span class="fa fa-times"></span>
-          <% end %>
-        </div>
-        <div>
-          <%= link_to edit_topic_bookmark_path(topic, bookmark), html_options = {"data-toggle":"tooltip", "data-placement": "top", title: "Edit Bookmark", class: "btn-sm  btn-primary-outline"}  do %>
-            <span class="fa fa-pencil"></span>
-          <% end %>
-        </div>
-      </div>
+      <%= render partial: "bookmarks/function", locals:{bookmark: bookmark} %>
     <% end %>
     <div class="card-block">
-      <h5 class="card-title"><%= link_to bookmark.title, [topic, bookmark] %></h5>
-      <h6 class="card-subtitle text-muted"><%= topic.title %></h6>
+      <h5 class="card-title"><%= link_to bookmark.title, [bookmark.topic, bookmark] %></h5>
+      <h6 class="card-subtitle text-muted"><%= bookmark.topic.title %></h6>
     </div>
     <%= image_tag bookmark.thumbnail, size: "150x150",class:"card-img-top img-fluid center-block" %>
     <div class="card-block">
