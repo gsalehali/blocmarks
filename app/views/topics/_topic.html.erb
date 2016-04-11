@@ -4,7 +4,7 @@
       <div class="row">
         <% if policy(topic).destroy? %>
           <div class="pull-right">
-            <%= link_to topic, html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Topic", class: "btn-sm btn-danger-outline"}  do %>
+            <%= link_to topic, html_options = { method: :delete, remote: true, "data-toggle":"tooltip", "data-placement": "top", title: "Remove Topic", class: "btn-sm btn-danger-outline t-btn"}  do %>
               <span class="fa fa-times"></span>
             <% end %>
           </div>

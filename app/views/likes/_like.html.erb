@@ -1,0 +1,13 @@
+<% if policy(bookmark.likes.new).create? %>
+  <div class="pull-right">
+    <% if like = current_user.liked(bookmark) %>
+      <%= link_to [bookmark, like],  html_options = { method: :delete, "data-toggle":"tooltip", "data-placement": "top", title: "Unlike Bookmark",  class: 'btn btn-sm btn-danger-outline'} do %>
+        <span class="fa fa-heart"></span>
+      <% end %>
+    <% else %>
+      <%= link_to [bookmark, Like.new], html_options = { method: :post, "data-toggle":"tooltip", "data-placement": "top", title: "Like Bookmark",  class: 'btn btn-sm btn-primary-outline'} do %>
+        <span class="fa fa-heart-o"></span>
+      <% end %>
+    <% end %>
+  </div>  
+<% end %>

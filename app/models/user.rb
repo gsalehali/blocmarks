@@ -5,8 +5,13 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :bookmarks, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   def full_name
     return "#{first_name} #{last_name}"
+  end
+
+  def liked(bookmark)
+    likes.where(bookmark_id: bookmark.id).first
   end
 end

@@ -20,6 +20,7 @@
     </div>
     <%= image_tag bookmark.thumbnail, size: "150x150",class:"card-img-top img-fluid center-block" %>
     <div class="card-block">
+      <%= render partial: 'likes/like', locals: { bookmark: bookmark } %>
       <%= link_to "Link", bookmark.url, class: "btn btn-primary-outline btn-sm" %>
       <div><small class="text-muted"><%= "Added #{time_ago_in_words(bookmark.created_at)} ago" %></small></div>
     </div>
