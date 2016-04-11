@@ -40,6 +40,9 @@
               <%= link_to "Home", root_path, html_options = {class: "nav-link"} %>
             </li>
             <li class="nav-item">
+              <%= link_to "Topics", topics_path, html_options = {class: "nav-link"} %>
+            </li>
+            <li class="nav-item">
               <%= link_to "About", about_path, html_options = {class: "nav-link"} %>
             </li>
           </ul>
@@ -47,7 +50,29 @@
       </div>
     </nav>
     <div class="inner-body">
-      <%= yield %>
+      <div class="body-content <%= add_css(controller)%>">
+        <div class="inner">
+          <div class="<%= "text-xs-left" if controller.class.to_s.downcase.exclude?("welcome") %>">
+            <% if flash[:notice] %>
+              <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= flash[:notice] %>
+              </div>
+            <% elsif flash[:error] %>
+              <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= flash[:error] %>
+              </div>
+            <% elsif flash[:alert] %>
+              <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= flash[:alert] %>
+              </div>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

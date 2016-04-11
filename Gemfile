@@ -23,6 +23,9 @@ gem 'font-awesome-sass'
 gem 'figaro'
 gem 'pry'
 gem 'devise'
+gem 'link_thumbnailer' #create thumbnails from urls
+gem 'will_paginate'    #Adds paggination 
+gem 'pundit'           #Adds User authorization
 
 group :development, :test do
   gem 'spring' # Pre Loads web server in Dev for faster response times

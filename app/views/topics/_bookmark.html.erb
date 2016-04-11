@@ -1,0 +1,13 @@
+<div class="col-lg-3 col-md-4 col-sm-12 text-xs-left">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title text-overflow"><%= link_to bookmark.title, [@topic, bookmark] %></h4>
+      <h6 class="card-subtitle text-muted"><%= @topic.title %></h6>
+    </div>
+    <%= image_tag bookmark.thumbnail, size: "150x150",class:"card-img-top img-fluid center-block" %>
+    <div class="card-block">
+      <%= link_to "Link", bookmark.url, class: "btn btn-primary-outline btn-sm" %>
+      <div><small class="text-muted"><%= "Added #{time_ago_in_words(bookmark.created_at)} ago" %></small></div>
+    </div>
+  </div>
+</div>
