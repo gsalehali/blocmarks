@@ -1,0 +1,12 @@
+<div class="row">
+  <h1 class="pull-left">All topics</h1>
+  <div class="pull-right">
+    <%= link_to new_topic_path, html_options = {"data-toggle":"tooltip", "data-placement": "top", title: "New Topic", class: "btn btn-primary-outline fn-btn"}  do %>
+      <sapan class="fa fa-plus"></span>
+    <% end %>
+  </div>
+</div>
+
+<%= render @topics%>
+
+<%= will_paginate @topics %>
