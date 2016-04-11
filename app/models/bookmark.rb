@@ -3,7 +3,8 @@ require "link_thumbnailer"
 class Bookmark < ActiveRecord::Base
   after_save :add_thumbnail_and_title
 
-  belongs_to :topic 
+  belongs_to :topic
+  belongs_to :user 
 
   private
 

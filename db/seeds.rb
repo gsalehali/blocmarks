@@ -25,7 +25,7 @@ end
 users = User.all
 30.times do 
   Topic.create!(
-    title: Faker::Lorem.sentence,
+    title: "#" + Faker::Lorem.word,
     user:  users.sample
   )
 end
@@ -34,7 +34,8 @@ topics = Topic.all
 100.times do 
   Bookmark.create!(
     url: "http://www.facebook.com/",
-    topic: topics.sample
+    topic: topics.sample,
+    user: users.sample
   )
 end
 
