@@ -1,0 +1,7 @@
+<% if @bookmark.destroyed? %>
+  flashMsg( '#bookmark-' +<%= @bookmark.id %>, ".bookmark-border" ,"<%= flash[:notice] %>", "success")
+  $('#bookmark-' +<%= @bookmark.id %>).fadeOut(1000);
+  <% flash.discard %>
+<% else %>
+  flashMsg("<%= flash[:error] %>", "error")
+<% end %>

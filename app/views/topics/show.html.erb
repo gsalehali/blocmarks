@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="row">
+    <h2 class="pull-left"><%= "##{@topic.title}" %></h2>
+    <div class="pull-right">
+      <%= link_to new_topic_bookmark_path(@topic), html_options = {"data-toggle":"tooltip", "data-placement": "top", title: "New Bookmark", style: "margin-top: 0px", class: "btn btn-primary-outline fn-btn"}  do %>
+        <span class="fa fa-plus"></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="row bookmark-border">
+    <%= render partial: "bookmarks/bookmark", collection: @bookmarks, locals:{topic: @topic} %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="row">
+    <h2><%= @bookmark.title %></h2>
+    <small><%= @bookmark.topic.title %></small>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-3 col-md-5 col-sm-12"><%= image_tag @bookmark.thumbnail, class: "card-img-top img-fluid" %></div>
+  </div>
+  <div class="row" style="margin-top: 10px;">
+    <div><%= @bookmark.description %></div>
+    <div class="pull-right"><%= link_to "Visit Link", @bookmark.url, class: "btn btn-primary-outline" %></div>
+  </div>
+</div>
+
+
+
